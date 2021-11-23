@@ -24,8 +24,8 @@ vim.cmd [[Plug 'Raimondi/delimitMate']]
 vim.cmd [[Plug 'scrooloose/nerdcommenter']]
 vim.cmd [[Plug 'tpope/vim-sleuth']]
 vim.cmd [[Plug 'airblade/vim-gitgutter']]
+vim.cmd [[Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }]]
 vim.cmd [[Plug 'editorconfig/editorconfig-vim']]
-
 vim.cmd [[Plug 'junegunn/fzf']]
 vim.cmd [[Plug 'junegunn/fzf.vim']]
 
