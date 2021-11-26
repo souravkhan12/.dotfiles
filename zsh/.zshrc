@@ -17,7 +17,9 @@ function makeclear {
 function gotocontest {
   cd ./Programming/Contest/
 }
-
+function gotopractice {
+  cd ./Programming/Practice
+}
 
 function mkcd {
     if [ ! -n $1 ]
