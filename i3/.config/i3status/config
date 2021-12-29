@@ -62,5 +62,6 @@ tztime local {
 
 run_watch VPN {
         pidfile = "/proc/sys/net/ipv4/conf/proton0"
+"
 }
 

@@ -20,6 +20,7 @@ vim.cmd [[Plug 'bling/vim-bufferline']]
 vim.cmd [[Plug 'altercation/vim-colors-solarized']]
 
 -- Editor plugins
+vim.cmd [[Plug 'tpope/vim-commentary']]
 vim.cmd [[Plug 'Raimondi/delimitMate']]
 vim.cmd [[Plug 'scrooloose/nerdcommenter']]
 vim.cmd [[Plug 'tpope/vim-sleuth']]
@@ -38,6 +39,8 @@ vim.cmd [[Plug 'hrsh7th/nvim-compe']]
 --TODO
 vim.cmd [[Plug 'lervag/vimtex', { 'for': 'tex' }]]
 vim.cmd [[Plug 'vim-pandoc/vim-pandoc']]
+vim.cmd [[Plug 'Vimjas/vim-python-pep8-indent']]
+vim.cmd [[Plug 'maxmellon/vim-jsx-pretty']]
 
 -- Note taking
 vim.cmd [[Plug 'lukaszkorecki/workflowish']]
@@ -91,7 +94,7 @@ vim.api.nvim_set_keymap('n', '#', [[?\<<C-R>=expand('<cword>')<CR>\><CR>]], { no
 vim.cmd [[nnoremap <silent> <expr> <CR> &buftype ==# 'quickfix' ? "\<CR>" : ":nohl\<CR>"]]
 
 vim.api.nvim_set_keymap('n', 'gA', ':%y+<CR>', { noremap = true })
-vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap('i',  'jj', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('', '<C-n>', ':NERDTreeToggle<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', '<C-b>', ':vsplit |:te ./a.out<CR>', { noremap = true })
 vim.api.nvim_set_keymap('', '<C-c>', ':23 d<CR>', { noremap = true })
@@ -156,7 +159,7 @@ treesitter_parser_configs.cpp = {
 treesitter.setup {
     ensure_installed = 'maintained',
     highlight = { enable = true, additional_vim_regex_highlighting = true },
-    --indent = { enable = true },
+    -- indent = { enable = true },
 }
 
 --vim.opt.foldmethod = 'expr'
@@ -174,6 +177,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true,
     virtual_text = {
       spacing = 8,
+      severity_limit = "Error",
     },
     signs = false,
     update_in_insert = false,
@@ -236,7 +240,7 @@ vim.cmd [[highlight LspReferenceWrite cterm=bold ctermbg=0 guibg=LightYellow]]
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "tsserver","bashls"} --graphql pylsp
+local servers = {"clangd","tsserver","pylsp"} 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = lsp_on_attach,
