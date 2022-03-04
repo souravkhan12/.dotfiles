@@ -8,7 +8,7 @@ local options = {
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
-  showtabline = 2,                         -- always show tabs
+  --showtabline = 2,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -37,3 +37,4 @@ for k, v in pairs(options) do
 end
 
 vim.g.delimitMate_expand_cr = 1
+vim.g.airline_powerline_fonts = 1
