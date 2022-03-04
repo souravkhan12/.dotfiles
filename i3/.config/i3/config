@@ -18,6 +18,7 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 9
 
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -29,7 +30,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-bindsym $mod+Escape exec --no-startup-id i3lock -c 000000 && xset dpms force off
+bindsym $mod+Escape exec --no-startup-id i3lock  -c 000000 && xset dpms force off
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -252,4 +253,3 @@ mode "num" {
 }
 bindsym Num_Lock mode "num"
 
-bindsym $mod+slash exec --no-startup-id ~/.config/i3/workspace.rb

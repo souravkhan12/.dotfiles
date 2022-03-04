@@ -5,5 +5,5 @@
 
 nitrogen --restore &
 xbanish &
-#~/.starttray.sh &
+~/.starttray.sh &
 export TERMINAL=alacritty

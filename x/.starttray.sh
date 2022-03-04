@@ -1,7 +1,7 @@
 #!/bin/zsh
-dunst &
 #pasystray &
 nm-applet &
-#blueman-applet &
+# optimus-manager-qt &
+# blueman-applet &
 #xxkb &
 #parcellite &

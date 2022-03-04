@@ -14,12 +14,6 @@ function makeclear {
     sudo pacman -Qttdq | sudo pacman -Rns -
 }
 
-function gotocontest {
-  cd ./Programming/Contest/
-}
-function gotopractice {
-  cd ./Programming/Practice
-}
 
 function mkcd {
     if [ ! -n $1 ]
@@ -37,7 +31,18 @@ function mkcd {
 function r {
     ./a.out
 }
-
+declare -a PROMPTS
+PROMPTS=(
+    "∮"
+    "∯"
+    "≎"
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+)
 alias py="python3"
 
 function clean {

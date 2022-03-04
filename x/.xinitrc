@@ -42,7 +42,7 @@ fi
 #xrandr --auto
 
 
-DEFAULTSESSION=i3
+DEFAULTSESSION=awesome
 
 case "$1" in 
 	i3-with-shmlog) exec i3-with-shmlog ;;
