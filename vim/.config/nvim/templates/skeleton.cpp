@@ -19,7 +19,6 @@ using ld = long double;
 tcT> using V = vector<T>;
 tcT> using P = pair<T,T>;
 
-#define endl '\n'
 tcT> istream& operator>>(istream& in,vector<T> &v){FOR(i,0,SZ(v)){ in >> v[i];} return in;}
 tcT> ostream& operator<<(ostream& out,vector<T> v){FOR(i,0,SZ(v)){ out << v[i] << " ";} return out;}
 tcT,typename T2> istream& operator>>(istream& in, pair<T,T2> &a){in >>a.first >> a.second; return in;}
@@ -43,6 +42,7 @@ void solve(int i){
 signed main() {
 	ios_base::sync_with_stdio(false),cin.tie(nullptr);
 	int T = 1;
+//	cin >> T; // TODO UNCOMMENT FOR TEST-CASES
 	FOR(i,1,T+1) solve(i);
 	return 0;
 }

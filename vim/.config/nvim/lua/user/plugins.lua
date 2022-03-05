@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
 
   --airline 
   use "vim-airline/vim-airline"
@@ -67,6 +68,16 @@ return packer.startup(function(use)
   --Git 
   use "airblade/vim-gitgutter"
 
+  --Treesitter
+  use {
+	  "nvim-treesitter/nvim-treesitter",
+	  run = ":TSUpdate",
+  }
+
+  --LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+	use "p00f/nvim-ts-rainbow"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
