@@ -65,6 +65,8 @@ return packer.startup(function(use)
   -- Colorschemes
   use "lunarvim/darkplus.nvim"
   use 'altercation/vim-colors-solarized'
+  use 'morhetz/gruvbox'
+  use 'sickill/vim-monokai'
   --Git 
   use "airblade/vim-gitgutter"
 
@@ -73,7 +75,7 @@ return packer.startup(function(use)
 	  "nvim-treesitter/nvim-treesitter",
 	  run = ":TSUpdate",
   }
-
+  --Airline themes 
   --LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"

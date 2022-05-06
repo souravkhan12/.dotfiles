@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -183,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-monokai"] = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-monokai",
+    url = "https://github.com/sickill/vim-monokai"
   }
 }
 

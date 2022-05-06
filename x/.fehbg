@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/skhan/Downloads/images/usr/share/backgrounds/arcolinux/time-abstract.jpg' 
+feh --no-fehbg --bg-scale '/home/skhan/Downloads/Backgrounds/building_moon_night_142790_3840x2400.jpg' 

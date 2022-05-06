@@ -3,6 +3,10 @@ autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/skeleton.cpp
 ]])
 
 vim.api.nvim_command([[
+autocmd BufNewFile *.cc 0r ~/.config/nvim/templates/skeleton.cc
+]])
+
+vim.api.nvim_command([[
 autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
 ]])
 

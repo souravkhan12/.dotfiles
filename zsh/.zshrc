@@ -14,6 +14,9 @@ function makeclear {
     sudo pacman -Qttdq | sudo pacman -Rns -
 }
 
+function compile {
+	g++ -std=c++17 -O2 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion  $1
+}
 
 function mkcd {
     if [ ! -n $1 ]
@@ -121,7 +124,7 @@ NVM_LAZY=1
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux zsh-completions zsh-autosuggestions)
+plugins=(git archlinux zsh-completions zsh-autosuggestions )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -206,3 +209,7 @@ export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
