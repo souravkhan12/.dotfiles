@@ -10,11 +10,15 @@ export ZSH="/home/skhan/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="bureau"
 
+function pp {
+	python 
+}
+
 function makeclear {
     sudo pacman -Qttdq | sudo pacman -Rns -
 }
 
-function compile {
+function out {
 	g++ -std=c++17 -O2 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion  $1
 }
 
@@ -198,14 +202,9 @@ fi
 
 [[ -e ~/.dircolors ]] && eval `dircolors ~/.dircolors`
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-alias luamake=/home/skhan/lua-language-server/3rd/luamake/compile/luamake
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:~/.local/bin/
 
-export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache

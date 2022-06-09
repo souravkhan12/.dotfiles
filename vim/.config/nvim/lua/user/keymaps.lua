@@ -26,6 +26,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>d", ":26<CR>dd<CR>:19", opts)
 
 --To Yank all--
 keymap("n", "gA", ":%y+<cr>", opts)

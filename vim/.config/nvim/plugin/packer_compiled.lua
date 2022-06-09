@@ -179,10 +179,20 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
+  ["vim-coloresque"] = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-coloresque",
+    url = "https://github.com/gko/vim-coloresque"
+  },
   ["vim-colors-solarized"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
     url = "https://github.com/altercation/vim-colors-solarized"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-gitgutter"] = {
     loaded = true,

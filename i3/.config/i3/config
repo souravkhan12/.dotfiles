@@ -82,8 +82,9 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
-bindsym $mod+f exec firefox
+bindsym $mod+F exec firefox
 bindsym $mod+C exec code
+bindsym $mod+G exec google-chrome
 
 #Floating window
 for_window [class="FXTerm"] floating enable
@@ -260,24 +261,9 @@ mode "num" {
 }
 bindsym Num_Lock mode "num"
 
-# Plasma compatibility improvements
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-
-for_window [class="yakuake"] floating enable
-for_window [class="systemsettings"] floating enable
-for_window [class="plasmashell"] floating enable;
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
-
-
 exec --no-startup-id feh --bg-scale /home/skhan/Downloads/Backgrounds/building_moon_night_142790_3840x2400.jpg
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+exec_always --no-startup-id /usr/bin/lxqt-policykit-agent &
+exec_always --no-startup-id /usr/lib/kdeconnectd
+

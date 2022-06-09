@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use 'altercation/vim-colors-solarized'
   use 'morhetz/gruvbox'
   use 'sickill/vim-monokai'
+  use 'gko/vim-coloresque'
   --Git 
   use "airblade/vim-gitgutter"
 
@@ -75,6 +76,8 @@ return packer.startup(function(use)
 	  "nvim-treesitter/nvim-treesitter",
 	  run = ":TSUpdate",
   }
+  -- plugin for Comment
+  use 'tpope/vim-commentary'
   --Airline themes 
   --LSP
   use "neovim/nvim-lspconfig"

@@ -38,3 +38,4 @@ end
 
 vim.g.delimitMate_expand_cr = 1
 vim.g.airline_powerline_fonts = 1
+vim.cmd [[autocmd FileType apache setlocal commentstring=#\ %s]]
