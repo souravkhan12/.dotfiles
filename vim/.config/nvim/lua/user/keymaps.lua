@@ -30,6 +30,7 @@ keymap("n", "<leader>d", ":26<CR>dd<CR>:19", opts)
 
 --To Yank all--
 keymap("n", "gA", ":%y+<cr>", opts)
+keymap("n","<C-D>",":vertical terminal ./a.out", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

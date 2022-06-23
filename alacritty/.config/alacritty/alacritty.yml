@@ -222,6 +222,7 @@ schemes:
     #  cyan:    '#5b7d78'
     #  white:   '#828482'
 
+
 #CHOOSE ONE COLORS SCHEMES
 colors : *solarized-light
 # Bell

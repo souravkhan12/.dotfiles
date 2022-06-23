@@ -2,6 +2,12 @@
 using namespace std;
 
 #define int long long
+using ll = long long;
+using ld = long double; 
+#define tcU template<class T
+tcU> using V = vector<T>; 
+
+#define int long long
 #define ld long double
 #define rep(i,a,b) for(int i=a;i<b;++i)
 #define per(i,a,b) for(int i=b;i>=a;i--)
@@ -9,15 +15,23 @@ using namespace std;
 #define all(a) a.begin(),a.end()
 #define precision(n) cout << fixed << setprecision(n)
 
-typedef vector<int> vi;
-typedef vector<vector<int>> vii;
-typedef pair<int,int> pi;
-
 void setIO(string s) { freopen((s + ".in").c_str(), "r", stdin); freopen((s + ".out").c_str(), "w", stdout); }
-const int MOD = 1e9 + 7;
-int max(int a,int b) {return a > b ? a : b;}
+const int mod = 1e9 + 7;
+tcU> T max(T a,T b) {return a > b ? a : b;}
+tcU> T min(T a, T b) { return a > b ? b : a;}
+
+template<typename T1, typename T2> // cin >> pair
+istream &operator>>(istream &istream, pair<T1, T2> &p) { return (istream >> p.first >> p.second); }
+tcU> // cin >> vector
+istream &operator>>(istream &istream, vector<T> &v) { for (auto &it : v) { cin >> it; } return istream; }
+template<typename T1, typename T2> // cout << pair
+ostream &operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second); }
+tcU> // cout << vector
+ostream &operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) { cout << it << " "; } return ostream; }
+ 
 
 void solve() {
+	// TODO test Case
 }
 
 signed main() {

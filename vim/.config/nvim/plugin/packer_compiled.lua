@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  darcula = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/darcula",
+    url = "https://github.com/doums/darcula"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
@@ -119,10 +124,10 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  gruvbox = {
+  ["github-nvim-theme"] = {
     loaded = true,
-    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -154,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/ful1e5/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -179,11 +189,6 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
-  ["vim-coloresque"] = {
-    loaded = true,
-    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-coloresque",
-    url = "https://github.com/gko/vim-coloresque"
-  },
   ["vim-colors-solarized"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
@@ -199,10 +204,10 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
-  ["vim-monokai"] = {
+  ["vscode.nvim"] = {
     loaded = true,
-    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vim-monokai",
-    url = "https://github.com/sickill/vim-monokai"
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

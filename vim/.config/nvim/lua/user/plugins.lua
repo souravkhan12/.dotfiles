@@ -65,9 +65,10 @@ return packer.startup(function(use)
   -- Colorschemes
   use "lunarvim/darkplus.nvim"
   use 'altercation/vim-colors-solarized'
-  use 'morhetz/gruvbox'
-  use 'sickill/vim-monokai'
-  use 'gko/vim-coloresque'
+  use 'ful1e5/onedark.nvim'
+  use 'Mofiqul/vscode.nvim'
+  use "projekt0n/github-nvim-theme"
+  use 'doums/darcula'
   --Git 
   use "airblade/vim-gitgutter"
 

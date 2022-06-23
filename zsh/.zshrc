@@ -9,16 +9,21 @@ export ZSH="/home/skhan/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="bureau"
+# ZSH_THEME="zenburn"
 
 function pp {
 	python 
+}
+
+function input {
+	cat > a.in 
 }
 
 function makeclear {
     sudo pacman -Qttdq | sudo pacman -Rns -
 }
 
-function out {
+function compile {
 	g++ -std=c++17 -O2 -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion  $1
 }
 
@@ -50,6 +55,7 @@ PROMPTS=(
     ""
     ""
 )
+
 alias py="python3"
 
 function clean {
