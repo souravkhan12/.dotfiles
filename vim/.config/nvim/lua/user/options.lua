@@ -1,41 +1,65 @@
-local options = {
-  backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  conceallevel = 0,                        -- so that `` is visible in markdown files
-  ruler = true,
-  fileencoding = "utf-8",                  -- the encoding written to a file
-  hlsearch = true,                         -- highlight all matches on previous search pattern
-  ignorecase = true,                       -- ignore case in search patterns
-  mouse = "a",                             -- allow the mouse to be used in neovim
-  --showtabline = 2,                         -- always show tabs
-  smartcase = true,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
-  splitbelow = true,                       -- force all horizontal splits to go below current window
-  splitright = true,                       -- force all vertical splits to go to the right of current window
-  swapfile = false,                        -- creates a swapfile
-  timeoutlen = 1000,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  expandtab = false,                        -- convert tabs to spaces
-  shiftwidth = 4,                          -- the number of spaces inserted for each indentation
-  tabstop = 4,                             -- insert 2 spaces for a tab
-  --cursorline = true,                       -- highlight the current line
-  number = true,                           -- set numbered lines
-  relativenumber = false,                  -- set relative numbered lines
-  numberwidth = 2,                         -- set number column width to 2 {default 4}
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- is one of my fav
-  sidescrolloff = 8,
-  foldmethod='syntax',
-}
+-- local options {
+	vim.opt.backup = false -- creates a backup file
+	vim.opt.clipboard = "" -- don't use clipboard
+	vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+	 vim.opt.colorcolumn = "99999" -- fixes indentline for now
+	vim.opt.completeopt = { "menuone", "noselect" }
+	vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+	-- vim.opt.cursorline = true -- highlight the current line
+	vim.opt.expandtab = true -- convert tabs to spaces
+	vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+    vim.opt.mouse = 'a'
+	vim.opt.foldexpr = "" -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+	vim.opt.foldmethod = "syntax" -- folding set to "expr" for treesitter based folding
+	vim.opt.hidden = true -- required to keep multiple buffers and open multiple buffers
+	vim.opt.hlsearch = true -- highlight all matches on previous search pattern
+	vim.opt.ignorecase = true -- ignore case in search patterns
+	vim.opt.list = true
+	vim.opt.listchars = {
+        tab = '» ',
+        trail = '␣',
+        extends = '▶',
+        precedes = '◀',
+    }
+	vim.opt.number = true -- set numbered lines
+	vim.opt.numberwidth = 1 -- set number column width to 2 {default 4}
+	vim.opt.pumheight = 10 -- pop up menu height
+	vim.opt.relativenumber = false -- set relative numbered lines
+	vim.opt.scrolloff = 4 -- is one of my fav
+	vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+	vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+	vim.opt.sidescrolloff = 4
+	vim.opt.signcolumn = "yes" -- always show the sign column otherwise it would shift the text each time
+	vim.opt.smartcase = true -- smart case
+	vim.opt.smartindent = true -- make indenting smarter again
+	vim.opt.spell = false -- disable spell checking
+	vim.opt.spelllang = "en" -- language for spell checking
+	vim.opt.splitbelow = true -- force all horizontal splits to go below current window
+	vim.opt.splitright = true -- force all vertical splits to go to the right of current window
+	vim.opt.swapfile = false -- creates a swapfile
+	vim.opt.tabstop = 4 -- insert 2 spaces for a tab
+	vim.opt.termguicolors = false -- set term gui colors (most terminals support this)
+	vim.opt.timeoutlen = 500 -- timeout length
+	vim.opt.title = true -- set the title of window to the value of the titlestring
+	vim.opt.titlestring = "%<%F - nvim" -- what the title of the window will be set to
+	vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
+	vim.opt.undofile = true -- enable persistent undo
+	vim.opt.updatetime = 300 -- faster completion
+	vim.opt.wrap = true -- display lines as one long line
+	vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+	vim.opt.laststatus = 2 -- hide statusline
+--}
 
+-- for k, v in pairs(options) do
+--   vim.opt[k] = v
+-- end
+
+vim.g.border_style = "rounded"
 vim.g.delimitMate_expand_cr = 1
 vim.g.airline_powerline_fonts = 1
 vim.cmd [[autocmd FileType apache setlocal commentstring=#\ %s]]
+
+
+
+

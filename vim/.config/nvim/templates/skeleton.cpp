@@ -11,9 +11,10 @@ tcU> using V = vector<T>;
 #define ld long double
 #define rep(i,a,b) for(int i=a;i<b;++i)
 #define per(i,a,b) for(int i=b;i>=a;i--)
-#define sz(a) (a.size())
+#define sz(a) (int)(a.size())
 #define all(a) a.begin(),a.end()
 #define precision(n) cout << fixed << setprecision(n)
+#define nline '\n'
 
 void setIO(string s) { freopen((s + ".in").c_str(), "r", stdin); freopen((s + ".out").c_str(), "w", stdout); }
 const int mod = 1e9 + 7;

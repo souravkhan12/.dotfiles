@@ -71,7 +71,8 @@ return packer.startup(function(use)
   use 'doums/darcula'
   --Git 
   use "airblade/vim-gitgutter"
-
+  --leetcode
+  use 'ianding1/leetcode.vim'
   --Treesitter
   use {
 	  "nvim-treesitter/nvim-treesitter",

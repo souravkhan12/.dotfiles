@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+  ["leetcode.vim"] = {
+    loaded = true,
+    path = "/home/skhan/.local/share/nvim/site/pack/packer/start/leetcode.vim",
+    url = "https://github.com/ianding1/leetcode.vim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/skhan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
