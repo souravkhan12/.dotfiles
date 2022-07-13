@@ -165,7 +165,7 @@ export EDITOR='vim'
 # alias zshonfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="/bin/nvim"
-alias oldvim="/bin/vim"
+alias v="/bin/vim"
 
 [[ -f /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
