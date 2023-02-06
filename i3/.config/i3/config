@@ -30,7 +30,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-bindsym $mod+Escape exec --no-startup-id i3lock -i ~/Downloads/Wallpapers/forest_fog_trees_126005_3840x2400.png
+bindsym $mod+Escape exec --no-startup-id i3lock -i ~/Downloads/Wallpapers/sol.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

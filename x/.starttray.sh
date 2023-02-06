@@ -1,5 +1,5 @@
 #!/bin/zsh
-#pasystray &
+pasystray &
 nm-applet &
 # optimus-manager-qt &
 blueman-applet &
