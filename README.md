@@ -17,6 +17,7 @@ To use these dotfiles on your Linux machine, you can clone the repository and us
 ```bash
 git clone https://github.com/souravkhan12/.dotfiles.git
 cd .dotfiles
+```
 
 ## 2. Install GNU Stow
 If you don’t have **Stow** installed, you can do so with the following command:
@@ -24,6 +25,7 @@ If you don’t have **Stow** installed, you can do so with the following command
 ```bash
 sudo apt install stow   # For Ubuntu/Debian-based systems
 sudo pacman -S stow     # For Arch-based systems
+```
 
 ### Usage
 stow alacritty
