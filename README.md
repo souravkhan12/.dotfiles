@@ -28,6 +28,8 @@ sudo pacman -S stow     # For Arch-based systems
 ```
 
 ### Usage
+```bash
 stow alacritty
 stow i3
 stow nvim
+```
