@@ -52,6 +52,9 @@ return packer.startup(function(use)
   use "vim-airline/vim-airline-themes"
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}  
   -- snippets
+    use 'onsails/lspkind-nvim' -- For adding icons to autocompletion
+    use 'nvim-tree/nvim-web-devicons' -- For icons across Neovim
+  --
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use  
   -- Colorschemes
@@ -63,10 +66,9 @@ return packer.startup(function(use)
   use 'doums/darcula'
   --Git 
   use "airblade/vim-gitgutter"
+  use 'sbdchd/neoformat'
+    --Treesitter
 
-  --leetcode
-  use 'ianding1/leetcode.vim'
-  --Treesitter
   use {
 	  "nvim-treesitter/nvim-treesitter",
 	  run = ":TSUpdate",
