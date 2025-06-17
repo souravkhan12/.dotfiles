@@ -59,7 +59,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use  
   -- Colorschemes
   use "lunarvim/darkplus.nvim"
-  use 'altercation/vim-colors-solarized'
+  use ('Tsuzat/NeoSolarized.nvim')
   use 'ful1e5/onedark.nvim'
   use 'Mofiqul/vscode.nvim'
   use "projekt0n/github-nvim-theme"
