@@ -1,0 +1,11 @@
+[Unit]
+Description=Set balanced mode after suspend
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powerprofilesctl set balanced
+
+[Install]
+WantedBy=suspend.target
+
