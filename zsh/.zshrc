@@ -20,7 +20,7 @@ ZSH_THEME="bureau"
 
 
 # Plugins
-plugins=(git zsh-completions zsh-autosuggestions)
+plugins=(git zsh-completions zsh-autosuggestions zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,3 +120,21 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export DOCKER_HOST='unix:///var/run/docker.sock'
+
+
+function nvm_prompt_info() {
+  if command -v nvm &>/dev/null; then
+    local version=$(nvm current)
+    echo "⬢ $version"
+  fi
+}
+
+# bun completions
+[ -s "/home/skhan/.bun/_bun" ] && source "/home/skhan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
