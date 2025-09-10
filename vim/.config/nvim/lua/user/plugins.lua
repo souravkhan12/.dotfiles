@@ -47,9 +47,15 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  --airline 
-  use "vim-airline/vim-airline"
-  use "vim-airline/vim-airline-themes"
+
+
+  --lualine
+
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}  
   -- snippets
     use 'onsails/lspkind-nvim' -- For adding icons to autocompletion
@@ -68,6 +74,14 @@ return packer.startup(function(use)
   use "airblade/vim-gitgutter"
   use 'sbdchd/neoformat'
     --Treesitter
+
+  -- vitesse Dark theme
+ use {
+  "2nthony/vitesse.nvim",
+  requires = {
+    "tjdevries/colorbuddy.nvim"
+  }
+} 
 
   use {
 	  "nvim-treesitter/nvim-treesitter",

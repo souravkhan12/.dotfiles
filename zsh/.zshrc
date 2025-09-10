@@ -38,7 +38,9 @@ export LC_TYPE=en_US.UTF-8
 alias py="python3"
 alias vim="/bin/nvim"
 alias v="/bin/vim"
+alias goto="~/Programming/CPP/"
 export EDITOR='nvim'
+
 
 function gc() { git clone $1 }
 
