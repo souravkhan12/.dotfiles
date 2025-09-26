@@ -1,0 +1,25 @@
+✅ Fix 1: Run dmesg as root
+
+You ran into a permissions issue. Try:
+
+sudo dmesg | grep -i logitech
+
+
+This will tell us if the kernel is autosuspending or throwing HID warnings.
+
+✅ Fix 2: Disable USB Autosuspend for Logitech Receiver
+
+Fedora sometimes autosuspends USB HID devices, causing mouse stutter. Create a udev rule:
+
+sudo nano /etc/udev/rules.d/90-logitech-mouse.rules
+
+
+Add:
+
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c542", TEST=="power/control", ATTR{power/control}="on"
+
+
+Then reload:
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
