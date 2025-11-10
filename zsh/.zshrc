@@ -5,6 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/clangd/clangd/bin:$PATH"
 export PATH=$PATH:~/.local/bin/clangd
+    
 
 # -----------------------------
 # 📦 Oh-My-Zsh Config
@@ -39,10 +40,9 @@ alias py="python3"
 alias vim="/bin/nvim"
 alias v="/bin/vim"
 alias goto="~/Programming/CPP/"
+alias gc="git clone"
 export EDITOR='nvim'
 
-
-function gc() { git clone $1 }
 
 function makeclear() {
   sudo pacman -Qttdq | sudo pacman -Rns -
@@ -148,3 +148,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
