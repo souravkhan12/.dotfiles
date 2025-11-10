@@ -1,3 +1,5 @@
 In Newer version of intel there is only two profiles :-
 1) Performance 2) Power Saving 
 It lags optimisation of profile so to fix lag issue u either need auto-cpufreq package or something else
+
+2) Most important is to set the time equal to the latest one on wakeup
