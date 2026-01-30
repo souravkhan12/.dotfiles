@@ -16,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="agnoster"
 
-ZSH_THEME="bureau"
+#ZSH_THEME="bureau"
 
 
 
@@ -151,3 +151,61 @@ esac
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+
+
+web() {
+  # must be in a JS project
+  [[ -f package.json ]] || {
+    echo "❌ No package.json found"
+    return 1
+  }
+
+  # 1️⃣ Read packageManager field if present
+  local pm
+  pm=$(node -e "try{console.log(require('./package.json').packageManager||'')}catch(e){}")
+
+  if [[ "$pm" == bun* ]] && command -v bun >/dev/null; then
+    echo "▶ bun run dev"
+    bun run dev
+    return
+  fi
+
+  if [[ "$pm" == pnpm* ]] && command -v pnpm >/dev/null; then
+    echo "▶ pnpm run dev"
+    pnpm run dev
+    return
+  fi
+
+  if [[ "$pm" == yarn* ]] && command -v yarn >/dev/null; then
+    echo "▶ yarn dev"
+    yarn dev
+    return
+  fi
+
+  if [[ "$pm" == npm* ]] && command -v npm >/dev/null; then
+    echo "▶ npm run dev"
+    npm run dev
+    return
+  fi
+
+  # 2️⃣ Fallback to lockfiles (Bun first)
+  if [[ -f bun.lock || -f bun.lockb ]] && command -v bun >/dev/null; then
+    echo "▶ bun run dev"
+    bun run dev
+  elif [[ -f pnpm-lock.yaml ]] && command -v pnpm >/dev/null; then
+    echo "▶ pnpm run dev"
+    pnpm run dev
+  elif [[ -f yarn.lock ]] && command -v yarn >/dev/null; then
+    echo "▶ yarn dev"
+    yarn dev
+  elif [[ -f package-lock.json ]] && command -v npm >/dev/null; then
+    echo "▶ npm run dev"
+    npm run dev
+  else
+    echo "❌ Could not determine package manager"
+    return 1
+  fi
+}
+
+eval "$(starship init zsh)"
