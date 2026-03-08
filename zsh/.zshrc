@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="agnoster"
 
-ZSH_THEME="bureau"
+#ZSH_THEME="bureau"
 
 
 
@@ -140,3 +140,6 @@ function nvm_prompt_info() {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
+
+eval "$(starship init zsh)"
+
