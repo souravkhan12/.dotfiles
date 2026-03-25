@@ -1,0 +1,100 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 0,
+  "margin-top": 2,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 0,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "custom/colorpicker", "network", "pulseaudio", "battery"],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 52,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1",
+      "(.*) - Google Chrome": "$1",
+      "(.*) - Chromium": "$1"
+    }
+  },
+
+  "clock": {
+    "format": "  {:%a %b %d    %I:%M %p}",
+    "tooltip-format": "<big>{:%A, %B %d %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+
+  "custom/colorpicker": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Color picker — click: hex to clipboard\nRight-click: RGB",
+    "on-click": "hyprpicker -a -f hex -q",
+    "on-click-right": "hyprpicker -a -f rgb -q"
+  },
+
+  "network": {
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "{icon} Wired",
+    "format-disconnected": "{icon} Offline",
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰈀",
+      "linked": "󰈀",
+      "disconnected": "󰤮"
+    },
+    "tooltip-format-wifi": "{essid}\n{signalStrength}% · {ipaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+    "tooltip-format-disconnected": "No network"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "max-volume": 150,
+    "scroll-step": 2,
+    "tooltip": true,
+    "tooltip-format": "{desc}\n{volume}%",
+    "on-click": "pavucontrol",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{timeTo} · {capacity}%"
+  }
+}

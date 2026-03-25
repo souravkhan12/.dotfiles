@@ -1,0 +1,24 @@
+font=FiraMono Nerd Font 12
+background-color=#2e3440ee
+text-color=#eceff4
+border-color=#88c0d0
+border-radius=10
+border-size=2
+width=320
+height=120
+padding=12
+margin=8
+default-timeout=5000
+icon-path=/usr/share/icons/Papirus-Dark
+layer=overlay
+
+# Volume / brightness (from hypr/scripts/media-osd.sh, notify-send -a "Hypr OSD")
+[app-name=Hypr OSD]
+anchor=top-center
+width=380
+default-timeout=900
+margin=24
+
+[urgency=high]
+border-color=#bf616a
+background-color=#2e3440ee

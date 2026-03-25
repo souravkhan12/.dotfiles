@@ -1,0 +1,155 @@
+/* Sleek minimal bar — low profile, no workspace pills */
+
+* {
+  font-family:
+    "Geist Mono", "FiraMono Nerd Font", "Font Awesome 6 Free", "SF Pro Display",
+    "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  min-height: 0;
+  min-width: 0;
+}
+
+window#waybar {
+  background: rgba(18, 18, 20, 0.72);
+  color: #ececf1;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0 6px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: background-color 0.2s ease;
+}
+
+tooltip {
+  background: rgba(28, 28, 32, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: #ececf1;
+}
+
+tooltip label {
+  color: #ececf1;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 2px;
+}
+
+/* Workspaces — flat labels; active = accent + line, no pill */
+#workspaces {
+  padding: 0 4px 0 0;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 0 1px;
+  min-width: 22px;
+  color: rgba(236, 236, 241, 0.42);
+  background: transparent;
+  border-radius: 0;
+  transition:
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+#workspaces button:hover {
+  color: rgba(236, 236, 241, 0.88);
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: #ffffff;
+  background: transparent;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#workspaces button.active:hover {
+  color: #ffffff;
+  background: transparent;
+  box-shadow: inset 0 -2px 0 0 #7ddbff;
+}
+
+#window {
+  padding: 0 8px;
+  margin: 0;
+  color: rgba(236, 236, 241, 0.62);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+#clock {
+  padding: 0 10px;
+  margin: 0;
+  color: #f5f5f7;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+}
+
+#tray {
+  padding: 0 6px 0 2px;
+  margin: 0;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#custom-colorpicker {
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(236, 236, 241, 0.9);
+}
+
+#custom-colorpicker:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#network,
+#pulseaudio,
+#battery {
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(236, 236, 241, 0.92);
+}
+
+#network {
+  margin-left: 6px;
+}
+
+#battery {
+  margin-right: 0;
+}
+
+#network:hover,
+#pulseaudio:hover,
+#battery:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+#battery.warning {
+  color: #ffd60a;
+}
+
+#battery.critical {
+  color: #ff453a;
+}
+
+#pulseaudio.muted {
+  color: rgba(236, 236, 241, 0.45);
+}
