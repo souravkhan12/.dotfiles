@@ -141,5 +141,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 
+if [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]; then
+    export HYPRLAND_ACTIVE=1
+fi
+
 eval "$(starship init zsh)"
 

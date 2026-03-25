@@ -30,13 +30,13 @@
   },
 
   "clock": {
-    "format": "  {:%a %b %d    %I:%M %p}",
+    "format": "   {:%a %b %d    %I:%M %p}",
     "tooltip-format": "<big>{:%A, %B %d %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
   "tray": {
     "icon-size": 16,
-    "spacing": 10
+    "spacing": 14
   },
 
   "custom/colorpicker": {
@@ -48,9 +48,9 @@
   },
 
   "network": {
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "{icon} Wired",
-    "format-disconnected": "{icon} Offline",
+    "format-wifi": "{icon}  {essid}",
+    "format-ethernet": "{icon}  Wired",
+    "format-disconnected": "{icon}  Offline",
     "format-icons": {
       "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
       "ethernet": "󰈀",
@@ -63,10 +63,10 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "  Muted",
-    "format-source": " {volume}%",
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "   Muted",
+    "format-source": "  {volume}%",
     "format-source-muted": "",
     "max-volume": 150,
     "scroll-step": 2,
@@ -90,10 +90,10 @@
       "warning": 25,
       "critical": 10
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-full": "{icon} {capacity}%",
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{timeTo} · {capacity}%"
   }

@@ -16,7 +16,7 @@ window#waybar {
   color: #ececf1;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
-  padding: 0 6px;
+  padding: 0 8px;
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -38,12 +38,12 @@ tooltip label {
 .modules-left,
 .modules-center,
 .modules-right {
-  padding: 0 2px;
+  padding: 0 6px;
 }
 
 /* Workspaces — flat labels; active = accent + line, no pill */
 #workspaces {
-  padding: 0 4px 0 0;
+  padding: 0 8px 0 0;
 }
 
 #workspaces button {
@@ -77,7 +77,7 @@ tooltip label {
 }
 
 #window {
-  padding: 0 8px;
+  padding: 0 10px;
   margin: 0;
   color: rgba(236, 236, 241, 0.62);
   font-weight: 500;
@@ -85,7 +85,7 @@ tooltip label {
 }
 
 #clock {
-  padding: 0 10px;
+  padding: 0 12px;
   margin: 0;
   color: #f5f5f7;
   font-weight: 600;
@@ -94,7 +94,7 @@ tooltip label {
 }
 
 #tray {
-  padding: 0 6px 0 2px;
+  padding: 0 10px 0 6px;
   margin: 0;
 }
 
@@ -107,8 +107,8 @@ tooltip label {
 }
 
 #custom-colorpicker {
-  padding: 0 8px;
-  margin: 0 2px;
+  padding: 0 10px;
+  margin: 0 4px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.05);
   color: rgba(236, 236, 241, 0.9);
@@ -121,15 +121,22 @@ tooltip label {
 #network,
 #pulseaudio,
 #battery {
-  padding: 0 8px;
-  margin: 0 2px;
+  padding: 0 12px;
+  margin: 0 4px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.05);
   color: rgba(236, 236, 241, 0.92);
 }
 
+/* Extra air between icon glyphs and label text (pairs with wider format strings in config) */
+#network label,
+#pulseaudio label,
+#battery label {
+  padding-left: 2px;
+}
+
 #network {
-  margin-left: 6px;
+  margin-left: 8px;
 }
 
 #battery {

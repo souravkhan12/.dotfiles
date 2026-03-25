@@ -10,6 +10,6 @@ keybind = ctrl+z=close_surface
 keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
-font-family = "Dm Mono"
-font-size = 14
+font-family = "Geist Mono"
+font-size = 13
 
