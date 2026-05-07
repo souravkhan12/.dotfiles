@@ -4,20 +4,11 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/clangd/clangd/bin:$PATH"
-export PATH=$PATH:~/.local/bin/clangd
 
 # -----------------------------
 # 📦 Oh-My-Zsh Config
 # -----------------------------
 export ZSH="$HOME/.oh-my-zsh"
-#ZSH_THEME="avit"
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="agnoster"
-
-#ZSH_THEME="bureau"
-
-
 
 # Plugins
 plugins=(git zsh-completions zsh-autosuggestions zsh-nvm)
@@ -39,6 +30,8 @@ alias py="python3"
 alias vim="/bin/nvim"
 alias v="/bin/vim"
 alias goto="~/Programming/CPP/"
+alias web="npm run dev"
+alias npr="npm run"
 export EDITOR='nvim'
 
 
@@ -120,9 +113,16 @@ NVM_LAZY=1
 export STARSHIP_CONFIG=~/.config/starship.toml
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+load-nvm() {
+  unset -f node npm npx nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+}
+
+node() { load-nvm; node "$@"; }
+npm() { load-nvm; npm "$@"; }
+npx() { load-nvm; npx "$@"; }
+nvm() { load-nvm; nvm "$@"; }
 export DOCKER_HOST='unix:///var/run/docker.sock'
 
 
@@ -133,13 +133,5 @@ function nvm_prompt_info() {
   fi
 }
 
-# bun completions
-[ -s "/home/skhan/.bun/_bun" ] && source "/home/skhan/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH=$HOME/.local/bin:$PATH
-
 eval "$(starship init zsh)"
-
+export PATH="$HOME/.local/bin:$PATH"

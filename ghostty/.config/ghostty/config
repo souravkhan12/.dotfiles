@@ -1,7 +1,38 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-background = 282c34
-foreground = ffffff
+# Claude-inspired light theme (warm cream background, terracotta accents)
+background = faf9f5
+foreground = 3d3929
+cursor-color = 3d3929
+cursor-style = block
+cursor-style-blink = false
+cursor-opacity = 0.85
+adjust-cursor-thickness = 4
+selection-background = e8e6dc
+selection-foreground = 3d3929
+
+# Font rendering — crisper text on light background (macOS)
+font-thicken = true
+font-thicken-strength = 128
+adjust-cell-height = 8%
+
+# ANSI palette tuned to Claude's warm light aesthetic
+palette = 0=#3d3929
+palette = 1=#c96442
+palette = 2=#7a8450
+palette = 3=#b88a3e
+palette = 4=#5b7a99
+palette = 5=#9a6a8c
+palette = 6=#6a8a8a
+palette = 7=#6b6657
+palette = 8=#9a9482
+palette = 9=#d97757
+palette = 10=#8fa05f
+palette = 11=#d4a04c
+palette = 12=#7090b0
+palette = 13=#b380a0
+palette = 14=#80a0a0
+palette = 15=#3d3929
 
 # Comments start with a `#` and are only valid on their own line.
 # Blank lines are ignored!
@@ -10,6 +41,8 @@ keybind = ctrl+z=close_surface
 keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
-font-family = "Dm Mono"
-font-size = 14
+#font-family = "Dm Mono"
+#font-family = "CommitMono"
+font-family = "SF Mono"
+font-size = 15
 
