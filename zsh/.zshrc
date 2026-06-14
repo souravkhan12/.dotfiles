@@ -36,6 +36,12 @@ export EDITOR='nvim'
 
 
 function gc() { git clone $1 }
+function gp() { git checkout develop && git pull origin }
+function gpr() {git checkout $1 && git pull origin }
+function runTest() {
+  cd /Users/sourav/frontend-dashboard/Playwright-Test
+  HEADED=1 ./node_modules/.bin/playwright test $1 --project=chromium --workers=1
+}
 
 function makeclear() {
   sudo pacman -Qttdq | sudo pacman -Rns -
@@ -130,6 +136,53 @@ function nvm_prompt_info() {
   if command -v nvm &>/dev/null; then
     local version=$(nvm current)
     echo "⬢ $version"
+  fi
+}
+
+# Pop up a macOS confirmation before a destructive delete.
+# Returns 0 (proceed) only if the user clicks "Yes".
+function _confirm_delete {
+  local answer
+  answer=$(osascript \
+    -e "display dialog \"Do you really want to delete?
+
+$*\" buttons {\"No\", \"Yes\"} default button \"No\" with icon caution with title \"Confirm deletion\"" \
+    -e 'button returned of result' 2>/dev/null)
+  [ "$answer" = "Yes" ]
+}
+
+# Guard `rm` for recursive deletes (-r/-R/-rf/-fr/--recursive); plain rm passes through.
+function rm {
+  local recursive=0 arg
+  for arg in "$@"; do
+    case "$arg" in
+      --recursive) recursive=1 ;;
+      --) break ;;
+      -[!-]*) [[ "$arg" == *[rR]* ]] && recursive=1 ;;
+    esac
+  done
+  if (( recursive )); then
+    if _confirm_delete "rm $*"; then
+      command rm "$@"
+    else
+      echo "rm: cancelled"
+      return 1
+    fi
+  else
+    command rm "$@"
+  fi
+}
+
+function rmrf {
+  if [ $# -eq 0 ]; then
+    echo "rmrf: nothing to delete"
+    return 1
+  fi
+  if _confirm_delete "rm -rf $*"; then
+    command rm -rf "$@"
+  else
+    echo "rmrf: cancelled"
+    return 1
   fi
 }
 

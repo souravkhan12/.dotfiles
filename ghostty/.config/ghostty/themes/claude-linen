@@ -1,0 +1,42 @@
+# Claude Linen — the goldilocks light theme
+# Sits between Claude Cream (too bright, glare) and Claude Parchment
+# (too tan, muddy): a warm linen background with espresso ink.
+#
+# Design rules applied:
+#   - Every one of the 16 ANSI colors is verified >= 4.5:1 (WCAG AA)
+#     against the background — including the brights, which most light
+#     themes get wrong.
+#   - Brights gain SATURATION over their normal counterparts, not
+#     lightness (lighter = unreadable on a light background).
+#   - All accents share a warm undertone so nothing clashes with the
+#     linen base; hues are spaced for colorblind-friendly separation.
+#   - Selection is a deeper linen that keeps syntax colors legible
+#     (no selection-foreground override, colors show through).
+
+background = f3ede0
+foreground = 39322a
+
+cursor-color = c0552f
+cursor-text = f3ede0
+
+selection-background = e6dcc3
+
+# Normal — calibrated earth tones, 4.8–10.8:1 contrast
+palette = 0=#39322a
+palette = 1=#a13a1e
+palette = 2=#586f30
+palette = 3=#855d08
+palette = 4=#38678c
+palette = 5=#8a4672
+palette = 6=#1b6f63
+palette = 7=#6d6453
+
+# Bright — same lightness band, higher chroma, 4.6–13.7:1 contrast
+palette = 8=#716752
+palette = 9=#bf3a10
+palette = 10=#4f721a
+palette = 11=#876000
+palette = 12=#2f6fa3
+palette = 13=#9c4180
+palette = 14=#0a7565
+palette = 15=#27211a

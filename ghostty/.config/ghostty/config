@@ -1,38 +1,21 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-# Claude-inspired light theme (warm cream background, terracotta accents)
-background = faf9f5
-foreground = 3d3929
-cursor-color = 3d3929
+# Color theme — palettes live in ~/.config/ghostty/themes/
+#   claude-linen      (active) — warm linen, WCAG-AA verified palette
+#   claude-parchment           — refined, low-glare warm paper
+#   claude-cream               — original near-white cream
+# Switch back any time: theme = claude-cream  (or claude-parchment)
+theme = claude-cream
+
 cursor-style = block
 cursor-style-blink = false
 cursor-opacity = 0.85
 adjust-cursor-thickness = 4
-selection-background = e8e6dc
-selection-foreground = 3d3929
 
 # Font rendering — crisper text on light background (macOS)
 font-thicken = true
 font-thicken-strength = 128
 adjust-cell-height = 8%
-
-# ANSI palette tuned to Claude's warm light aesthetic
-palette = 0=#3d3929
-palette = 1=#c96442
-palette = 2=#7a8450
-palette = 3=#b88a3e
-palette = 4=#5b7a99
-palette = 5=#9a6a8c
-palette = 6=#6a8a8a
-palette = 7=#6b6657
-palette = 8=#9a9482
-palette = 9=#d97757
-palette = 10=#8fa05f
-palette = 11=#d4a04c
-palette = 12=#7090b0
-palette = 13=#b380a0
-palette = 14=#80a0a0
-palette = 15=#3d3929
 
 # Comments start with a `#` and are only valid on their own line.
 # Blank lines are ignored!

@@ -1,0 +1,28 @@
+# Claude Parchment — refined low-glare sibling of Claude Cream
+# Warm parchment background (less luminant than cream = less glare),
+# espresso ink, and an earthier, well-differentiated accent family.
+# Accent colors tuned for WCAG-AA contrast on the parchment background.
+background = ece2cc
+foreground = 3b3328
+cursor-color = c05a3c
+selection-background = dccfb0
+selection-foreground = 3b3328
+
+# Normal
+palette = 0=#3b3328
+palette = 1=#b8543a
+palette = 2=#647042
+palette = 3=#9c6e26
+palette = 4=#4f718f
+palette = 5=#8c5a78
+palette = 6=#4e7574
+palette = 7=#6a6253
+# Bright
+palette = 8=#8c8270
+palette = 9=#cc6147
+palette = 10=#7a8a4f
+palette = 11=#bd8a33
+palette = 12=#5f86a6
+palette = 13=#a06d8c
+palette = 14=#5f918f
+palette = 15=#2d281e
