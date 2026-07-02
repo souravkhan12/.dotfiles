@@ -1,20 +1,24 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
 # Color theme — palettes live in ~/.config/ghostty/themes/
-#   claude-linen      (active) — warm linen, WCAG-AA verified palette
-#   claude-parchment           — refined, low-glare warm paper
-#   claude-cream               — original near-white cream
+#   nord              (active) — arctic bluish, transparent
+#   claude-linen                — warm linen, WCAG-AA verified palette
+#   claude-parchment            — refined, low-glare warm paper
+#   claude-cream                — original near-white cream
 # Switch back any time: theme = claude-cream  (or claude-parchment)
-theme = claude-cream
+theme = nord
+
+# Transparency — lower opacity = more see-through. Blur softens the desktop
+# behind it (macOS). Tune background-opacity to taste (0.80–0.95).
+background-opacity = 0.90
+background-blur = 30
 
 cursor-style = block
 cursor-style-blink = false
 cursor-opacity = 0.85
 adjust-cursor-thickness = 4
 
-# Font rendering — crisper text on light background (macOS)
-font-thicken = true
-font-thicken-strength = 128
+# Font rendering
 adjust-cell-height = 8%
 
 # Comments start with a `#` and are only valid on their own line.
@@ -25,5 +29,5 @@ keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
 font-family = "Geist Mono"
-font-size = 13
+font-size = 16
 

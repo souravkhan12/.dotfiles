@@ -10,6 +10,8 @@ return {
         topdelete = { text = "▔" },
         changedelete = { text = "▎" },
       },
+      current_line_blame = true, -- GitLens-style inline blame
+      current_line_blame_opts = { delay = 400, virt_text_pos = "eol" },
     },
     keys = {
       {
@@ -47,6 +49,20 @@ return {
         end,
         desc = "Preview hunk",
       },
+      {
+        "<leader>hb",
+        function()
+          require("gitsigns").blame_line({ full = true })
+        end,
+        desc = "Blame line (full)",
+      },
+      {
+        "<leader>hB",
+        function()
+          require("gitsigns").toggle_current_line_blame()
+        end,
+        desc = "Toggle inline blame",
+      },
     },
   },
 
@@ -56,5 +72,19 @@ return {
     keys = {
       { "<leader>gg", "<cmd>Git<cr>", desc = "Git status (Fugitive)" },
     },
+  },
+
+  -- Rich diff & file-history views (GitLens-style)
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewToggleFiles" },
+    keys = {
+      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diff view (working tree)" },
+      { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history (current)" },
+      { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "File history (branch)" },
+      { "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
+    },
+    opts = {},
   },
 }

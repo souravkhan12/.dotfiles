@@ -19,3 +19,21 @@ map("n", "<C-k>", "<C-w>k", { desc = "Focus upper window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
 
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Leave terminal mode" })
+
+-- ── Splits (windows) ──────────────────────────────────────────────
+map("n", "<leader>wv", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
+map("n", "<leader>ws", "<cmd>split<cr>", { desc = "Split window horizontally" })
+map("n", "<leader>wc", "<C-w>c", { desc = "Close window" })
+map("n", "<leader>wo", "<C-w>o", { desc = "Close other windows" })
+map("n", "<leader>w=", "<C-w>=", { desc = "Equalize window sizes" })
+-- resize with arrows
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Grow window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Shrink window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Shrink window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Grow window width" })
+
+-- ── Tabs ──────────────────────────────────────────────────────────
+map("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New tab" })
+map("n", "<leader><tab>c", "<cmd>tabclose<cr>", { desc = "Close tab" })
+map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next tab" })
+map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous tab" })

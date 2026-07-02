@@ -6,6 +6,13 @@ export PATH="$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/nvim/lsp_servers/clangd/clangd/bin:$PATH"
 
 # -----------------------------
+# 🎨 LS_COLORS (Nord-tuned, drives zsh completion list-colors below)
+# Bold + truecolor so entries stay crisp against a dark background.
+# Set before oh-my-zsh loads so its "not very pretty" fallback doesn't win.
+# -----------------------------
+export LS_COLORS="di=1;38;2;136;192;208:ln=1;38;2;180;142;173:so=1;38;2;163;190;140:pi=1;38;2;235;203;139:ex=1;38;2;191;97;106:bd=1;38;2;235;203;139;48;2;59;66;82:cd=1;38;2;235;203;139;48;2;59;66;82:su=1;38;2;46;52;64;48;2;191;97;106:sg=1;38;2;46;52;64;48;2;136;192;208:tw=1;38;2;46;52;64;48;2;163;190;140:ow=1;38;2;46;52;64;48;2;235;203;139"
+
+# -----------------------------
 # 📦 Oh-My-Zsh Config
 # -----------------------------
 export ZSH="$HOME/.oh-my-zsh"
@@ -27,20 +34,41 @@ export LC_TYPE=en_US.UTF-8
 # 📚 Aliases & Functions
 # -----------------------------
 alias py="python3"
-alias vim="/bin/nvim"
-alias v="/bin/vim"
-alias goto="~/Programming/CPP/"
-alias web="npm run dev"
+alias vim="nvim"
+alias v="vim"
+
+function kill_port {
+  # free the vite dev port (3000) before starting
+  local pids
+  pids=$(lsof -ti tcp:3000 -sTCP:LISTEN)
+  if [[ -n "$pids" ]]; then
+    echo "Killing process on :3000 -> $pids"
+    kill $pids 2>/dev/null
+    # wait up to ~3s for graceful exit, then force
+    for i in {1..6}; do
+      lsof -ti tcp:3000 -sTCP:LISTEN >/dev/null || break
+      sleep 0.5
+    done
+    lsof -ti tcp:3000 -sTCP:LISTEN >/dev/null && kill -9 $(lsof -ti tcp:3000 -sTCP:LISTEN) 2>/dev/null
+  fi
+
+}
+function web {
+  kill_port
+  npm run dev
+}
 alias npr="npm run"
+alias GS="git stash"
+alias GSP="git stash pop"
 export EDITOR='nvim'
 
 
 function gc() { git clone $1 }
 function gp() { git checkout develop && git pull origin }
-function gpr() {git checkout $1 && git pull origin }
+function gpr() { git checkout $1 && git pull origin }
 function runTest() {
-  cd /Users/sourav/frontend-dashboard/Playwright-Test
-  HEADED=1 ./node_modules/.bin/playwright test $1 --project=chromium --workers=1
+  cd /Users/sourav/Code/frontend-dashboard/Playwright-Test
+  HEADED=1 ./node_modules/.bin/playwright test $@ --project=chromium --workers=1
 }
 
 function makeclear() {
@@ -192,3 +220,32 @@ fi
 
 eval "$(starship init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+
+# -----------------------------
+# 📋 Dashboard env switchers
+# -----------------------------
+# Copy an environment's dashboard-common.env into the dashboard .env file.
+# Resolves paths from the git repo root, so these work from any subdirectory.
+_cp_dashboard_env() {
+    local env_name="$1"
+    local repo_root
+    repo_root="$(git rev-parse --show-toplevel 2>/dev/null)"
+    if [ -z "$repo_root" ]; then
+        echo "cp_${env_name}: not inside a git repository" >&2
+        return 1
+    fi
+    local src="$repo_root/ops/env/${env_name}/dashboard-common.env"
+    local dest="$repo_root/src/galileo_apps/dashboard/.env"
+    if [ ! -f "$src" ]; then
+        echo "cp_${env_name}: source not found: $src" >&2
+        return 1
+    fi
+    cp "$src" "$dest" && echo "Copied ${env_name} env -> $dest"
+}
+
+cp_stg()     { _cp_dashboard_env staging; }
+cp_prod()    { _cp_dashboard_env production; }
+cp_preprod() { _cp_dashboard_env preprod; }
+
+alias goto="cd /Users/sourav/Code/frontend-dashboard/src/galileo_apps/dashboard"
+
